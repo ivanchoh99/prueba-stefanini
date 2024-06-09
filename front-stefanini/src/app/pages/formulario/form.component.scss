@@ -1,0 +1,18 @@
+form {
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+button {
+    border-radius: 2rem;
+}
+
+button:disabled {
+    border: 0.1rem solid rgb(184, 184, 184);
+    background-color: rgb(184, 184, 184);
+    color: gray;
+}
+
+span {
+    color: rgb(163, 163, 163);
+}

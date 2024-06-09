@@ -1,0 +1,23 @@
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"> -->
+<div class="modal-header d-flex justify-content-center">
+    <h1 class="modal-title fs-5" id="exampleModalLabel">{{notFoundPersonResponse.mensaje}}</h1>
+</div>
+<div class="modal-body">
+    <div class="mb-2">
+        <label for="tipoDocumento" class="form-label">Tipo de documento: </label>
+        <input disabled class="form-control rounded-2 bg-light-gray" [value]="notFoundPersonResponse.tipoDocuemto">
+    </div>
+    <div class="mb-2">
+        <label for="numeroDocumento" class="col-form-label ">Numero de documento: </label>
+        <input disabled class="form-control rounded-2 bg-light-gray p-2 "
+            [value]="notFoundPersonResponse.numeroDocumento">
+    </div>
+</div>
+<div class="modal-footer d-flex justify-content-center ">
+    <button type="button" class="btn btn-primary" routerLink="/" (click)="close()"> Nueva Consulta</button>
+</div>
+<!-- </div>
+    </div>
+</div> -->

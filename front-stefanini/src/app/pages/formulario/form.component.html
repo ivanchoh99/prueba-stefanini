@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-secondary">
+    <form [formGroup]="formularioPersona" class="col col-md-3 mx-auto bg-light d-flex flex-column"
+        (ngSubmit)="onSubmit()">
+        <span class="mb-3">Todos los campos son obligatorios</span>
+        <div class="mb-3">
+            <label for="tipoDocumento" class="form-label text-primary-emphasis">Tipo Documento</label>
+            <select class="form-select" aria-label="tipoDocumento" formControlName="tipoDocumento">
+                <option value="C">Cedula de Ciudadania</option>
+                <option value="P">Pasaporte</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="numeroDocumento" class="form-label text-primary-emphasis">Número de Documento</label>
+            <input type="number" aria-describedby="numeroDocumentoFeedback"
+                [ngClass]="!formularioPersona.get('numeroDocumento')?.touched ? 'form-control': formularioPersona.get('numeroDocumento')?.invalid ? 'form-control is-invalid' : 'form-control is-valid'"
+                id="numeroDocumento" formControlName="numeroDocumento">
+            <div id="numeroDocumentoFeedback" class="invalid-feedback">
+                El numero de documento debe estar entre 8 y 10 digitos
+            </div>
+        </div>
+
+        <button [disabled]="formularioPersona.invalid" type="submit"
+            class="btn btn-primary w-50 mx-auto">Buscar</button>
+    </form>
+</div>
