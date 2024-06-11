@@ -1,7 +1,7 @@
-package org.stefanini.backstefanini.exceptions;
+package org.stefanini.backstefanini.exception;
 
 import lombok.Getter;
-import org.stefanini.backstefanini.models.enums.TipoDocumento;
+import org.stefanini.backstefanini.model.enums.TipoDocumento;
 
 @Getter
 public class PersonaNotFoundException extends RuntimeException {

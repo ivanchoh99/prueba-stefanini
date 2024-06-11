@@ -1,13 +1,18 @@
-package org.stefanini.backstefanini.models;
+package org.stefanini.backstefanini.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
-import org.stefanini.backstefanini.models.enums.TipoDocumento;
+import org.stefanini.backstefanini.model.enums.TipoDocumento;
 @Slf4j
-@Data
+@Getter
+@NoArgsConstructor
+@Entity
+@Table(name = "personas")
 public class Persona {
+    @Id
     private long id;
+    @Enumerated(EnumType.STRING)
     private TipoDocumento tipoDocumento;
     private String primerNombre;
     private String segundoNombre;

@@ -1,4 +1,4 @@
-package org.stefanini.backstefanini.exceptions.models;
+package org.stefanini.backstefanini.exception.model;
 
 public record PersonaNotFoundResponse
         (String mensaje,

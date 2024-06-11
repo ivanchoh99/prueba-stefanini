@@ -1,4 +1,4 @@
-package org.stefanini.backstefanini.exceptions;
+package org.stefanini.backstefanini.exception;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
-import org.stefanini.backstefanini.exceptions.models.PersonaNotFoundResponse;
-import org.stefanini.backstefanini.models.enums.TipoDocumento;
+import org.stefanini.backstefanini.exception.model.PersonaNotFoundResponse;
+import org.stefanini.backstefanini.model.enums.TipoDocumento;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,13 +1,13 @@
-package org.stefanini.backstefanini.exceptions;
+package org.stefanini.backstefanini.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.stefanini.backstefanini.exceptions.models.PersonaNotFoundResponse;
-import org.stefanini.backstefanini.exceptions.models.ValidacionArgumentosResponse;
-import org.stefanini.backstefanini.models.CampoError;
+import org.stefanini.backstefanini.exception.model.PersonaNotFoundResponse;
+import org.stefanini.backstefanini.exception.model.ValidacionArgumentosResponse;
+import org.stefanini.backstefanini.exception.model.CampoError;
 
 import java.util.HashMap;
 import java.util.List;
@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(response);
     }
 
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<String> handlerException(Exception ex) {
         return ResponseEntity.status(500).body(ex.getMessage());
     }

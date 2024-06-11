@@ -1,10 +1,10 @@
-package org.stefanini.backstefanini.models.dto;
+package org.stefanini.backstefanini.model;
 
 import jakarta.validation.constraints.*;
 
 public record PersonaRequest(
         @NotNull(message = "No puede estar vació")
-        @Size(min = 1, max = 1, message = "El tipo de documento debe ser un solo carácter")
+        @Pattern(regexp = "^([P|C])$", message = "Tipo de documento no valido")
         String tipoDocumento,
         @NotNull(message = "El numero de documento no puede estar vació")
         @Min(value = 10000000, message = "El numero de documento debe estar entre 8 y 10 dígitos")
