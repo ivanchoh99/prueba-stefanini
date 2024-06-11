@@ -10,7 +10,7 @@ import { IPersonaRequest } from '../models/persona-request';
 export class DataService {
 
 
-  private _personaRequest = new BehaviorSubject<IPersonaRequest>({ tipoDocumento: '', numeroDocumento: 0 })
+  private _personaRequest = new BehaviorSubject<IPersonaRequest>({ tipoDocumento: '', numeroDocumento: '' })
   personaRequest$ = this._personaRequest.asObservable();
 
   constructor(private http: HttpClient) { }
@@ -20,6 +20,7 @@ export class DataService {
   }
 
   setDatosAConsultar(personaRequest: IPersonaRequest) {
+    personaRequest.numeroDocumento = personaRequest.numeroDocumento.replace(/\./g, '')
     this._personaRequest.next(personaRequest);
   }
 

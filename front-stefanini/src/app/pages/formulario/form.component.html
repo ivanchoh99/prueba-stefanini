@@ -11,9 +11,12 @@
         </div>
         <div class="mb-3">
             <label for="numeroDocumento" class="form-label text-primary-emphasis">Número de Documento</label>
-            <input type="number" aria-describedby="numeroDocumentoFeedback"
+            <input type="text" aria-describedby="numeroDocumentoFeedback" list="defalultNumeroDocumento"
                 [ngClass]="!formularioPersona.get('numeroDocumento')?.touched ? 'form-control': formularioPersona.get('numeroDocumento')?.invalid ? 'form-control is-invalid' : 'form-control is-valid'"
-                id="numeroDocumento" formControlName="numeroDocumento">
+                id="numeroDocumento" formControlName="numeroDocumento" (input)="formatiarNumero($event)">
+            <datalist id="defalultNumeroDocumento">
+                <option value="23445322"></option>
+            </datalist>
             <div id="numeroDocumentoFeedback" class="invalid-feedback">
                 El numero de documento debe estar entre 8 y 10 digitos
             </div>

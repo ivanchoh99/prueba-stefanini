@@ -20,8 +20,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(PersonaNotFoundException.class)
     public ResponseEntity<PersonaNotFoundResponse> handlerPersonaNotFoundException(PersonaNotFoundException ex) {
         log.warn("El usuario con la identificación {} y tipo de documento {} no existe", ex.getNumeroDocumento(), ex.getTipoDocumento());
-        PersonaNotFoundResponse response = new PersonaNotFoundResponse("Persona no encontrada", ex.getTipoDocumento(), ex.getNumeroDocumento());
-        return ResponseEntity.status(404).body(response);
+        return ResponseEntity.notFound().build();
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -36,6 +35,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<String> handlerException(Exception ex) {
-        return ResponseEntity.status(500).body(ex.getMessage());
+        return ResponseEntity.internalServerError().body(ex.getMessage());
     }
 }

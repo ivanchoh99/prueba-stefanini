@@ -15,7 +15,7 @@ import { ModalComponent } from './components/modal/modal.component';
     AppComponent,
     FormComponent,
     ResumenComponent,
-    ModalComponent
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

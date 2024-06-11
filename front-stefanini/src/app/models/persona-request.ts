@@ -1,4 +1,4 @@
 export interface IPersonaRequest {
     tipoDocumento: string,
-    numeroDocumento: number
+    numeroDocumento: string
 }

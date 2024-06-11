@@ -1,5 +1,5 @@
 export interface INotFoundPersoneResponse {
     mensaje: string,
-    numeroDocumento: number,
+    numeroDocumento: string,
     tipoDocuemto: string
 }
